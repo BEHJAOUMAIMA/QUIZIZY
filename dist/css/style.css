@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../../images/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+body .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+body .container #stepper ul {
+  display: none;
+  margin: 20px;
+}
+body .container #stepper ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+body .container #stepper ul li .icon {
+  font-size: 30px;
+  margin: 0 170px;
+}
+body .container #stepper ul li .step {
+  font-size: 15px;
+  font-weight: 600;
+}
+body .container #stepper ul li .progress {
+  margin: 3px 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: gray;
+  display: grid;
+  place-items: center;
+  position: relative;
+  cursor: pointer;
+}
+body .container #stepper ul li .progress .uil {
+  display: none;
+}
+body .container #stepper ul li .progress .number {
+  font-size: 14px;
+}
+body .container #stepper ul li .progress::after {
+  content: " ";
+  position: absolute;
+  width: 345px;
+  height: 5px;
+  background-color: gray;
+  right: 30px;
+}
+body .container #stepper ul li .one::after {
+  width: 0;
+  height: 0;
+}
+body .container #stepper ul li .active {
+  background-color: #ff1582;
+}
+body .container #stepper ul li .active .number {
+  display: none;
+}
+body .container #stepper ul li .active .uil {
+  display: flex;
+}
+body .container #stepper ul li .active::after {
+  background-color: #ff1582;
+}
+body .container #start {
+  height: 70px;
+  width: 320px;
+  text-align: center;
+  margin: 300px auto;
+  padding: 18px 0;
+  background: #ff1582;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+}
+body .container #start:hover {
+  color: #ff1582;
+  background-color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
+}
+body .section {
+  display: none;
+  flex-direction: column;
+}
+body .section .logo {
+  color: white;
+  font-family: "Rubik Gemstones", cursive;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 60px;
+}
+body .section .form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 10px;
+  padding: 20px;
+  width: 460px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+body .section .form #input {
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  text-align: center;
+  border-radius: 30px;
+  border: 3px solid #ff1582;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-width: 3px;
+  border-style: solid;
+}
+body .section .form .errorname {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+body .section .form #btnvalider {
+  cursor: pointer;
+  padding: 15px;
+  margin-bottom: 7px;
+  text-align: center;
+  background-color: #ff1582;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+body .section .form #btnvalider:hover {
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
+}
+body .guide {
+  background-color: rgb(0, 8, 54);
+  width: 850px;
+  height: 320px;
+  display: none;
+  flex-direction: column;
+  margin: 120px auto;
+  border-radius: 30px;
+}
+body .guide .title {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 35px;
+}
+body .guide .rule {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-left: 35px;
+}
+body .guide #button {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+body .guide #button button {
+  height: 50px;
+  width: 120px;
+  margin: 25px 15px;
+  border: none;
+  outline: none;
+  color: #e7f1fa;
+  background: #ff1582;
+  border-radius: 20px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+}
+body .guide #button button:hover {
+  background-color: white;
+  color: #ff1582;
+}
+body .guide:hover {
+  background-color: rgb(0, 11, 71);
+}
+body .application {
+  display: none;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 1100px;
+  height: 570px;
+  padding: 15px;
+  background-color: rgb(0, 8, 54);
+  border-radius: 30px;
+  box-shadow: 10px 10px 3px #ff1582;
+}
+body .application .information {
+  display: flex;
+  padding: 15px;
+  margin: 10px 7px;
+}
+body .application .information .categorie, body .application .information .timer {
+  flex: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+body .application .information .timer {
+  text-align: right;
+}
+body .application .question {
+  margin: 8px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+body .application .question .titre {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+body .application .question h2:first-child {
+  margin: 0 10px 0 5px;
+}
+body .application .options {
+  padding: 0 20px 20px;
+  margin-top: 20px;
+  height: 289px;
+  width: 100%;
+}
+body .application .options .answer {
+  font-family: "Poppins", sans-serif;
+  height: 50px;
+  width: 100%;
+  margin: 15px 0;
+  border-radius: 7px;
+  padding: 0 20px;
+  font-size: 15px;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: 1px solid white;
+}
+body .application .options .answer:hover {
+  background-color: #ff1582;
+}
+body .application .options .active {
+  background-color: #ff1582;
+}
+body .application .options .disabled {
+  pointer-events: none;
+}
+body .application .app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 50px;
+}
+body .application .app-footer #total_correct {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+body .application .app-footer #btnNext {
+  background-color: #ff1582;
+  color: white;
+  display: block;
+  width: 100px;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+body .application .app-footer #btnNext:hover {
+  background-color: #f92d8c;
+  font-size: 16px;
+  transform: translateY(5px);
+}
+body #result {
+  height: 600px;
+  width: 1200px;
+  padding: 20px;
+  background-color: rgb(0, 8, 54);
+  border-radius: 30px 10px;
+  border: 1px solid #b0c4d8;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 150px;
+}
+body #result h6 {
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-top: 20px;
+}
+body #result #points {
+  font-size: 25px;
+  margin-top: 30px;
+}
+body #result .div {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+}
+body #result .div button {
+  height: 60px;
+  width: 260px;
+  border: none;
+  outline: none;
+  background-color: #ff1582;
+  color: #e7f1fa;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 120px;
+}
+body #result .div button:last-child {
+  margin-top: 20px;
+}
+body #result .div button:hover {
+  background-color: white;
+  color: #ff1582;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */

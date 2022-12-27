@@ -1,0 +1,387 @@
+        @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Mochiy+Pop+One&family=Poppins:wght@500;600;700;900&family=Rubik+Gemstones&family=Rubik+Spray+Paint&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        $font1:'Mochiy Pop One',
+        sans-serif;
+        $font2:'Karla',
+        sans-serif;
+        $font3:'Poppins',
+        sans-serif;
+        $font4: 'Rubik Gemstones',
+        cursive;
+        $font5:'Rubik Spray Paint',
+        cursive;
+        body {
+            background-image: url('../../images/bg1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            .container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                #stepper {
+                    ul {
+                        display: none;
+                        margin: 20px;
+                        li {
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: $font3;
+                            .icon {
+                                font-size: 30px;
+                                margin: 0 170px;
+                            }
+                            .step {
+                                font-size: 15px;
+                                font-weight: 600;
+                            }
+                            .progress {
+                                margin: 3px 0;
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                background-color: gray;
+                                display: grid;
+                                place-items: center;
+                                position: relative;
+                                cursor: pointer;
+                                .uil {
+                                    display: none;
+                                }
+                                .number {
+                                    font-size: 14px;
+                                }
+                            }
+                            .progress::after {
+                                content: " ";
+                                position: absolute;
+                                width: 345px;
+                                height: 5px;
+                                background-color: gray;
+                                right: 30px;
+                            }
+                            .one::after {
+                                width: 0;
+                                height: 0;
+                            }
+                            .active {
+                                background-color: #ff1582;
+                                .number {
+                                    display: none;
+                                }
+                                .uil {
+                                    display: flex;
+                                }
+                            }
+                            .active::after {
+                                background-color: #ff1582;
+                            }
+                        }
+                    }
+                }
+                #start {
+                    height: 70px;
+                    width: 320px;
+                    text-align: center;
+                    margin: 300px auto;
+                    padding: 18px 0;
+                    background: #ff1582;
+                    color: white;
+                    font-family: $font3;
+                    font-size: 23px;
+                    font-weight: 700;
+                    border-radius: 30px;
+                    cursor: pointer;
+                }
+                #start:hover {
+                    color: #ff1582;
+                    background-color: #fff;
+                    font-size: 24px;
+                    font-weight: bolder;
+                }
+            }
+            .section {
+                display: none;
+                flex-direction: column;
+                .logo {
+                    color: white;
+                    font: {
+                        family: $font4;
+                        size: 70px;
+                    }
+                    text-align: center;
+                    margin-top:60px;
+                }
+                .form {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 20px auto 10px;
+                    padding: 20px;
+                    width: 460px;
+                    background-color: #fff;
+                    border-radius: 15px;
+                    #input {
+                        padding: 15px;
+                        margin-top: 15px;
+                        margin-bottom: 7px;
+                        text-align: center;
+                        border-radius: 30px;
+                        border: 3px solid #ff1582;
+                        font: {
+                            family: $font3;
+                            weight: bold;
+                            size: 15px;
+                        }
+                        border: {
+                            width: 3px;
+                            style: solid;
+                        }
+                    }
+                    .errorname {
+                        color: black;
+                        font: {
+                            family: $font3;
+                            size: 13px;
+                            weight: bold;
+                        }
+                        text-align :center;
+                        margin:10px 0;
+                    }
+                    #btnvalider {
+                        cursor: pointer;
+                        padding: 15px;
+                        margin-bottom: 7px;
+                        text-align: center;
+                        background-color: #ff1582;
+                        border: none;
+                        color: white;
+                        font: {
+                            family: $font3;
+                            weight: bold;
+                            size: 15px;
+                        }
+                    }
+                    #btnvalider:hover {
+                        background-color: black;
+                        color: white;
+                        font-weight: bolder;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .guide {
+                background-color: rgba(0, 8, 54, 1);
+                width: 850px;
+                height: 320px;
+                display: none;
+                flex-direction: column;
+                margin: 120px auto;
+                border-radius: 30px;
+                .title {
+                    font: {
+                        family: $font1;
+                        size: 20px;
+                    }
+                    margin-top:50px;
+                    margin-bottom:25px;
+                    margin-left:35px;
+                }
+                .rule {
+                    font: {
+                        family: $font3;
+                        size: 16px;
+                    }
+                    margin-bottom:5px;
+                    margin-left:35px;
+                }
+                #button {
+                    height: 50px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    button {
+                        height: 50px;
+                        width: 120px;
+                        margin: 25px 15px;
+                        border: none;
+                        outline: none;
+                        color: #e7f1fa;
+                        background: #ff1582;
+                        border-radius: 20px;
+                        font-weight: bold;
+                        font-family: $font3;
+                        font-size: 18px;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: white;
+                        color: #ff1582;
+                    }
+                }
+            }
+            .guide:hover {
+                background-color: rgb(0, 11, 71);
+            }
+            .application {
+                display: none;
+                flex-direction: column;
+                margin: 20px auto;
+                width: 1100px;
+                height: 570px;
+                padding: 15px;
+                background-color: rgba(0, 8, 54, 1);
+                border-radius: 30px;
+                box-shadow: 10px 10px 3px #ff1582;
+                .information {
+                    display: flex;
+                    padding: 15px;
+                    margin: 10px 7px;
+                    .categorie {
+                        flex: 1;
+                        font: {
+                            family: $font3;
+                            size: 13px;
+                            weight: bold;
+                        }
+                    }
+                    .timer {
+                        @extend.categorie;
+                        text-align: right;
+                    }
+                }
+                .question {
+                    margin: 8px auto;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    .titre {
+                        font: {
+                            family: $font3;
+                            size: 18px;
+                            weight: bold;
+                        }
+                        margin:0;
+                    }
+                    h2:first-child {
+                        margin: 0 10px 0 5px;
+                    }
+                }
+                .options {
+                    padding: 0 20px 20px;
+                    margin-top: 20px;
+                    height: 289px;
+                    width: 100%;
+                    .answer {
+                        font-family: $font3;
+                        height: 50px;
+                        width: 100%;
+                        margin: 15px 0;
+                        border-radius: 7px;
+                        padding: 0 20px;
+                        font-size: 15px;
+                        color: #fff;
+                        overflow: hidden;
+                        cursor: pointer;
+                        border-bottom: 1px solid white;
+                    }
+                    .answer:hover {
+                        background-color: #ff1582;
+                    }
+                }
+                .options .active {
+                    background-color: #ff1582;
+                }
+                .options .disabled {
+                    pointer-events: none;
+                }
+                .app-footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: auto 50px;
+                    #total_correct {
+                        font-family: $font3;
+                        font-size: 15px;
+                    }
+                    #btnNext {
+                        background-color: #ff1582;
+                        color: white;
+                        display: block;
+                        width: 100px;
+                        padding: 15px 15px;
+                        border: none;
+                        border-radius: 10px;
+                        font-family: $font3;
+                        font-weight: bold;
+                        font-size: 15px;
+                        cursor: pointer;
+                    }
+                    #btnNext:hover {
+                        background-color: #f92d8c;
+                        font-size: 16px;
+                        transform: translateY(5px);
+                    }
+                }
+            }
+            #result {
+                height: 600px;
+                width: 1200px;
+                padding: 20px;
+                background-color: rgba(0, 8, 54, 1);
+                border-radius: 30px 10px;
+                border: 1px solid #b0c4d8;
+                display: none;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin: 50px 150px;
+                h6 {
+                    font-size: 30px;
+                    font-family: $font3;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                #points {
+                    font-size: 25px;
+                    margin-top: 30px;
+                }
+                .div {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: end;
+                    button {
+                        height: 60px;
+                        width: 260px;
+                        border: none;
+                        outline: none;
+                        background-color: #ff1582;
+                        color: #e7f1fa;
+                        border-radius: 20px;
+                        font-family: $font3;
+                        font-size: 18px;
+                        cursor: pointer;
+                        margin-top: 120px;
+                    }
+                    button:last-child {
+                        margin-top: 20px;
+                    }
+                    button:hover {
+                        background-color: white;
+                        color: #ff1582;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
