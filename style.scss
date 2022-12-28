@@ -91,25 +91,37 @@ body {
                 }
             }
         }
-        #start {
-            height: 70px;
-            width: 340px;
-            text-align: center;
-            margin: 285px auto;
-            padding: 18px 0;
-            background: rgb(178, 51, 110);
-            color: white;
-            font-family: $font3;
-            font-size: 23px;
-            font-weight: 700;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-        #start:hover {
-            color: rgb(217, 96, 152);
-            background-color: #fff;
-            font-size: 24px;
-            font-weight: bolder;
+        .loading {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 20px;
+            .affiche {
+                text-align: center;
+                margin-top: 90px;
+                font-family: $font1;
+                font-size: 60px;
+                display: none;
+            }
+            #start {
+                height: 70px;
+                width: 340px;
+                text-align: center;
+                margin: 160px 320px;
+                padding: 18px 0;
+                background: rgb(178, 51, 110);
+                color: white;
+                font-family: $font3;
+                font-size: 23px;
+                font-weight: 700;
+                border-radius: 30px;
+                cursor: pointer;
+            }
+            #start:hover {
+                color: rgb(217, 96, 152);
+                background-color: #fff;
+                font-size: 24px;
+                font-weight: bolder;
+            }
         }
     }
     .section {
@@ -437,9 +449,6 @@ body {
                 margin-top: 20px;
                 margin-right: 10px;
             }
-            // button:last-child {
-            //     // margin-top: 20px;
-            // }
             button:hover {
                 background-color: white;
                 color: #ff1582;

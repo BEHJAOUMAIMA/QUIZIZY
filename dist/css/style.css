@@ -81,11 +81,23 @@ body .container #stepper ul li .active .uil {
 body .container #stepper ul li .active::after {
   background-color: #ff1582;
 }
-body .container #start {
+body .container .loading {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px;
+}
+body .container .loading .affiche {
+  text-align: center;
+  margin-top: 90px;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 60px;
+  display: none;
+}
+body .container .loading #start {
   height: 70px;
   width: 340px;
   text-align: center;
-  margin: 285px auto;
+  margin: 160px 320px;
   padding: 18px 0;
   background: rgb(178, 51, 110);
   color: white;
@@ -95,7 +107,7 @@ body .container #start {
   border-radius: 30px;
   cursor: pointer;
 }
-body .container #start:hover {
+body .container .loading #start:hover {
   color: rgb(217, 96, 152);
   background-color: #fff;
   font-size: 24px;
