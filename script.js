@@ -1,3 +1,5 @@
+//CORRECTION
+const correction = document.querySelector(".correction");
 //stepper component
 const one = document.querySelector(".one");
 const two = document.querySelector(".two");
@@ -128,11 +130,20 @@ function countDown() {
     if (timer === 30) {
         clearInterval(interval);
         nextBtn.click();
+        correction.innerHTML += `<div class="quest">
+        <h4 class="quNo">${index+1}. </h4>
+        <h4 class="tit">${quizData[index].question}</h4>
+    </div>
+    <div class="choices">
+        <p class="choix" id="ch2">${quizData[index].right_answer}</p>
+    </div>
+    <div class="justif">
+        <p class="explication">${quizData[index].justification}</p>
+    </div>`;
     } else {
         timer++;
         time.innerText = "Temps : " + timer + " s";
     }
-    console.log(timer);
 }
 
 // aficher la question et les options
@@ -167,6 +178,17 @@ answers.forEach((choices) => {
             correct++;
         } else {
             correct += 0;
+            correction.innerHTML += `<div class="quest">
+                <h4 class="quNo">${index+1}. </h4>
+                <h4 class="tit">${quizData[index].question}</h4>
+            </div>
+            <div class="choices">
+                <p class="choix" id="ch1">${choices.innerText}</p>
+                <p class="choix" id="ch2">${quizData[index].right_answer}</p>
+            </div>
+            <div class="justif">
+                <p class="explication">${quizData[index].justification}</p>
+            </div>`;
         }
         // stopper le compteur
 
