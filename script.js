@@ -13,11 +13,11 @@ const three = document.querySelector(".three");
 //     two.classList.add("active");
 //     three.classList.remove("active");
 // }
-three.onclick = function() {
-    one.classList.add("active");
-    two.classList.add("active");
-    three.classList.add("active");
-}
+// three.onclick = function() {
+//     one.classList.add("active");
+//     two.classList.add("active");
+//     three.classList.add("active");
+// }
 
 // STEPPER
 let stepper = document.getElementById("prog");
@@ -71,6 +71,7 @@ let startAgainBtn = document.querySelector("#startAgain");
 let index = 0;
 let timer = 0;
 let interval = 0;
+let mention = "";
 
 //total points 
 
@@ -207,7 +208,16 @@ nextBtn.addEventListener("click", () => {
         one.classList.add("active");
         two.classList.add("active");
         three.classList.add("active");
-        points.innerHTML = `Vous avez répondu à ${correct} sur ${quizData.length} questions`;
+        if (correct == 0 || correct <= 4) {
+            mention = "Malheureusement !"
+        } else if (correct == 5 || correct <= 7) {
+            mention = "Bien !"
+        } else if (correct == 8 || correct < 10) {
+            mention = "Très Bien !"
+        } else {
+            mention = "Excellent"
+        }
+        points.innerHTML = `${mention} Vous avez répondu à ${correct} sur ${quizData.length} questions`;
         result.style.display = "block";
     }
     for (i = 0; i <= 3; i++) {
@@ -236,4 +246,4 @@ startAgainBtn.addEventListener("click", () => {
 })
 
 //questions aléatoires:
-// quizData.sort(function() { return Math.random() - 0.5; });
+quizData.sort(function() { return Math.random() - 0.5; });
