@@ -3,16 +3,16 @@ const one = document.querySelector(".one");
 const two = document.querySelector(".two");
 const three = document.querySelector(".three");
 
-one.onclick = function() {
-    one.classList.add("active");
-    two.classList.remove("active");
-    three.classList.remove("active");
-}
-two.onclick = function() {
-    one.classList.add("active");
-    two.classList.add("active");
-    three.classList.remove("active");
-}
+// one.onclick = function() {
+//     one.classList.add("active");
+//     two.classList.remove("active");
+//     three.classList.remove("active");
+// }
+// two.onclick = function() {
+//     one.classList.add("active");
+//     two.classList.add("active");
+//     three.classList.remove("active");
+// }
 three.onclick = function() {
     one.classList.add("active");
     two.classList.add("active");
@@ -90,6 +90,9 @@ validerBtn.addEventListener("click", () => {
         section.style.display = "none";
         guide.style.display = "flex";
     }
+    one.classList.add("active");
+    two.classList.remove("active");
+    three.classList.remove("active");
 
 });
 //que se passe-t-il si le bouton "commencer" est clicker
@@ -104,11 +107,18 @@ startBtn.addEventListener("click", () => {
 exitBtn.addEventListener("click", () => {
     startBtn.style.display = "block";
     guide.style.display = "none";
+    stepper.style.display = "none";
+    one.classList.remove("active");
+    two.classList.remove("active");
+    three.classList.remove("active");
 });
 //que ce pass-t-il lorsque le botton "continuer" est clické
 function StartQuiz() {
     quiz.style.display = "flex";
     guide.style.display = "none";
+    one.classList.add("active");
+    two.classList.add("active");
+    three.classList.remove("active");
     interval = setInterval(countDown, 1000);
     getData();
 };
@@ -119,7 +129,7 @@ function countDown() {
         nextBtn.click();
     } else {
         timer++;
-        time.innerText = "00:" + timer;
+        time.innerText = "Temps : " + timer + " s";
     }
     console.log(timer);
 }
@@ -145,7 +155,7 @@ getData();
 answers.forEach(removeActive => {
     removeActive.classList.remove("active")
 })
-total_correct.innerHTML = `${index} Out Of ${quizData.length} Questions`;
+total_correct.innerHTML = `${index+1} sur ${quizData.length} Questions`;
 
 
 answers.forEach((choices) => {
@@ -176,13 +186,17 @@ nextBtn.addEventListener("click", () => {
     if (index !== quizData.length - 1) {
         index++;
         answers.forEach(removeActive => {
-                removeActive.classList.remove("active");
-            })
-            // Afficher question 
+            removeActive.classList.remove("active");
+        })
+
+
+        // Afficher question 
         getData();
+
+
         //resultats
         total_correct.style.display = "block";
-        total_correct.innerHTML = `${index} Out Of ${quizData.length} Questions`;
+        total_correct.innerHTML = `${index+1} sur ${quizData.length} Questions`;
         clearInterval(interval);
         interval = setInterval(countDown, 1000);
 
@@ -190,7 +204,10 @@ nextBtn.addEventListener("click", () => {
         index = 0;
         clearInterval(interval);
         quiz.style.display = "none";
-        points.innerHTML = `You Got ${correct} Out Of ${quizData.length}`;
+        one.classList.add("active");
+        two.classList.add("active");
+        three.classList.add("active");
+        points.innerHTML = `Vous avez répondu à ${correct} sur ${quizData.length} questions`;
         result.style.display = "block";
     }
     for (i = 0; i <= 3; i++) {
@@ -203,12 +220,19 @@ nextBtn.addEventListener("click", () => {
 quitBtn.addEventListener("click", () => {
     startBtn.style.display = "block";
     result.style.display = "none";
+    stepper.style.display = "none";
+    one.classList.remove("active");
+    two.classList.remove("active");
+    three.classList.remove("active");
 })
 
 // click sur le botton "recommencer"
 startAgainBtn.addEventListener("click", () => {
     section.style.display = "flex";
     result.style.display = "none";
+    one.classList.remove("active");
+    two.classList.remove("active");
+    three.classList.remove("active");
 })
 
 //questions aléatoires:
