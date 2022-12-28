@@ -83,11 +83,11 @@ body .container #stepper ul li .active::after {
 }
 body .container #start {
   height: 70px;
-  width: 320px;
+  width: 340px;
   text-align: center;
   margin: 285px auto;
   padding: 18px 0;
-  background: #ff1582;
+  background: rgb(178, 51, 110);
   color: white;
   font-family: "Poppins", sans-serif;
   font-size: 23px;
@@ -96,7 +96,7 @@ body .container #start {
   cursor: pointer;
 }
 body .container #start:hover {
-  color: #ff1582;
+  color: rgb(217, 96, 152);
   background-color: #fff;
   font-size: 24px;
   font-weight: bolder;
@@ -107,7 +107,7 @@ body .section {
 }
 body .section .logo {
   color: white;
-  font-family: "Rubik Gemstones", cursive;
+  font-family: "Mochiy Pop One", sans-serif;
   font-size: 70px;
   text-align: center;
   margin-top: 60px;
@@ -117,7 +117,7 @@ body .section .form {
   flex-direction: column;
   margin: 20px auto;
   padding: 20px;
-  width: 400px;
+  width: 450px;
   background-color: #fff;
   border-radius: 15px;
 }
@@ -127,7 +127,7 @@ body .section .form #input {
   margin-bottom: 7px;
   text-align: center;
   border-radius: 30px;
-  border: 3px solid #ff1582;
+  border: 3px solid black;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 15px;
@@ -147,7 +147,7 @@ body .section .form #btnvalider {
   padding: 15px;
   margin-bottom: 7px;
   text-align: center;
-  background-color: #ff1582;
+  background-color: black;
   border: none;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -155,13 +155,14 @@ body .section .form #btnvalider {
   font-size: 15px;
 }
 body .section .form #btnvalider:hover {
-  background-color: black;
+  background-color: #ff1582;
   color: white;
   font-weight: bolder;
   font-size: 18px;
 }
 body .guide {
-  background-color: rgb(0, 8, 54);
+  background-color: white;
+  color: black;
   width: 830px;
   height: 320px;
   display: none;
@@ -175,6 +176,7 @@ body .guide .title {
   margin-top: 50px;
   margin-bottom: 25px;
   margin-left: 35px;
+  color: #ff1582;
 }
 body .guide .rule {
   font-family: "Poppins", sans-serif;
@@ -195,7 +197,7 @@ body .guide #button button {
   border: none;
   outline: none;
   color: #e7f1fa;
-  background: #ff1582;
+  background: black;
   border-radius: 20px;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
@@ -203,11 +205,14 @@ body .guide #button button {
   cursor: pointer;
 }
 body .guide #button button:hover {
-  background-color: white;
-  color: #ff1582;
+  background-color: #ff1582;
+  color: white;
 }
 body .guide:hover {
-  background-color: rgb(0, 11, 71);
+  background-color: rgb(100, 105, 134);
+}
+body .guide:hover .title {
+  color: black;
 }
 body .application {
   display: none;
@@ -216,13 +221,15 @@ body .application {
   width: 1100px;
   height: 570px;
   padding: 15px;
-  background-color: rgb(0, 8, 54);
+  background-color: white;
   border-radius: 30px;
+  color: black;
 }
 body .application .information {
   display: flex;
   padding: 15px;
   margin: 10px 7px;
+  color: rgb(34, 124, 112);
 }
 body .application .information .categorie, body .application .information .timer {
   flex: 1;
@@ -262,16 +269,18 @@ body .application .options .answer {
   border-radius: 20px;
   padding: 10px 20px;
   font-size: 15px;
-  color: #fff;
+  color: black;
   overflow: hidden;
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid;
 }
 body .application .options .answer:hover {
-  background-color: #8b1b4f;
+  background-color: rgb(217, 96, 152);
 }
 body .application .options .active {
   background-color: #ff1582;
+  color: #fff;
+  font-weight: 700;
 }
 body .application .options .disabled {
   pointer-events: none;
@@ -284,14 +293,16 @@ body .application .app-footer {
 }
 body .application .app-footer #total_correct {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(217, 96, 152);
 }
 body .application .app-footer #btnNext {
-  background-color: #ff1582;
+  background-color: rgb(217, 96, 152);
   color: white;
   display: block;
-  width: 100px;
-  padding: 15px 15px;
+  width: 120px;
+  padding: 18px 12px;
   border: none;
   border-radius: 10px;
   font-family: "Poppins", sans-serif;
@@ -373,6 +384,7 @@ body #result .correction .justif {
   width: 95%;
   border-radius: 10px;
   margin-left: 20px;
+  margin-bottom: 30px;
   background-color: rgb(144, 94, 150);
   padding: 10px 20px;
 }
